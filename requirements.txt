@@ -1,0 +1,7 @@
+nflreadpy
+pandas
+pyarrow
+matplotlib
+seaborn
+statsmodels
+jupyter
