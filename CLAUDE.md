@@ -36,7 +36,9 @@ charts/               # exported PNGs used in README
 - Primary outcome: **point differential per game** (the season went from 16 to 17 games in 2021).
 - Concentration: top player's cap hit ÷ position group total (multi-starter groups only).
 - Rookie QB flag: 1 if the primary starter is on his rookie contract (years 1–4 only; the 5th-year option year counts as 0).
-- DL/EDGE is one group, for both spending share and concentration.
+- DL/EDGE is one group, for both spending share and concentration. WR/TE is also one group for both.
+- Each player-season uses the position on the contract in effect that season (the latest contract signed on or before it).
+- Primary QB = most starts. Ties go to the one who started earlier in the season (the opening-day starter). Only drafted QBs can be rookie QBs.
 - Dead money is excluded. Shares only count players on the roster that season.
 - Washington is always called "Commanders", even for the Redskins-era seasons.
 - Regression uses standard errors clustered by team.
