@@ -2,7 +2,7 @@
 
 Every NFL team gets the same salary budget each season (the salary cap). This project asks: **does how a team divides that budget across positions, and whether it pays one star or spreads money across a group, relate to how well it performs?**
 
-**In two sentences:** Across 416 team-seasons (2013–2025), how a team split its salary budget explained almost none of the differences in how well teams played (under 3%). The clearest pattern was that teams relying on a quarterback still on his cheap first contract were outscored by about 1.5 points per game more than other teams, most likely because those teams were rebuilding.
+**In two sentences:** Across 416 team-seasons (2013–2025), how a team split its salary budget explained under 3% of the differences in how well teams played. The data also caps how big the effect could be: even moving a tenth of the whole budget into one position goes with at most a small gain, which suggests that picking the right players matters far more than which positions get the money.
 
 ## Why it matters
 The salary cap is a fixed budget split across positions, much like an investor splitting capital across assets under a hard limit. This project tests whether allocation choices under a fixed constraint line up with outcomes.
@@ -59,6 +59,20 @@ Other choices, all made before looking at results:
 
 ![Regression coefficients](charts/regression_coefficients.png)
 
+**4. Any effect is small at most.** Finding no clear effect doesn't prove the effect is zero, but the 95% ranges put a ceiling on it. The table scales each range to moving 10 percentage points of salary (about a tenth of the whole budget) from the defensive line to each group:
+
+| Group | Worst case (points/game) | Best case (points/game) |
+|---|---|---|
+| Quarterback | −2.03 | +0.75 |
+| Running backs | −3.42 | +2.05 |
+| Receivers (WR/TE) | −1.85 | +1.55 |
+| Offensive line | −2.89 | +0.48 |
+| Linebackers | −3.59 | +1.53 |
+| Cornerbacks | −2.31 | +1.81 |
+| Safeties | −2.67 | +2.48 |
+
+For scale, point differential per game typically varies by ±6.1 points between team-seasons. Even the best case for any group is under half of that. For the quarterback and offensive line, the groups teams have been moving money *toward* since 2013, the best case is under 1 point per game.
+
 **Also:**
 - **One star vs. spread-out money:** no pattern in any of the five groups (all correlations within ±0.07).
 - **Next season:** this season's split doesn't predict next season's results (joint p = 0.47).
@@ -67,7 +81,7 @@ Other choices, all made before looking at results:
 **A note on chance:** the notebook runs about 60 comparisons. At the 5% level, about 3 would look "significant" by luck alone. About 5–6 did, and several of those are the same rookie-QB result counted more than once. No single result here should be treated as a firm finding.
 
 ## Conclusion
-Over 13 seasons, how an NFL team split its salary budget was only weakly associated with how well it played. Which positions got the money, and whether it went to one star or was spread around, didn't separate good teams from bad ones in any clear way. The strongest pattern was that teams relying on a quarterback on his cheap first contract were outscored more often, which likely reflects rebuilding teams rather than a cost of cheap quarterbacks. Overall, the evidence suggests that *how well* a team spends matters more than *where* it spends.
+Over 13 seasons, how an NFL team split its salary budget was only weakly associated with how well it played. Which positions got the money, and whether it went to one star or was spread around, didn't separate good teams from bad ones in any clear way. The data also limits how big the effect could be. Even in the best case, moving a tenth of the whole budget into one position goes with at most about 0.5–2.5 points per game, a small fraction of the gap between good and bad teams. The strongest pattern was that teams relying on a quarterback on his cheap first contract were outscored more often, which likely reflects rebuilding teams rather than a cost of cheap quarterbacks. Overall, the evidence suggests that *how well* a team spends matters more than *where* it spends.
 
 ## Limitations
 - **Association, not causation:** good teams may pay players *because* they won. The next-season check (§9) addresses this only partly.
